@@ -1,5 +1,6 @@
 const ANKI_CONNECT_URL = "http://localhost:8765";
 const ANKI_CONNECT_VERSION = 6;
+const EXTENSION_TIMEOUT_MS = 3000;
 
 interface AnkiResponse<T = unknown> {
   result: T;
@@ -9,6 +10,17 @@ interface AnkiResponse<T = unknown> {
 export async function invoke<T = unknown>(
   action: string,
   params: Record<string, unknown> = {}
+): Promise<T> {
+  if (window.location.protocol === "https:") {
+    return invokeViaExtension<T>(action, params);
+  }
+
+  return invokeViaHttp<T>(action, params);
+}
+
+async function invokeViaHttp<T = unknown>(
+  action: string,
+  params: Record<string, unknown>
 ): Promise<T> {
   const response = await fetch(ANKI_CONNECT_URL, {
     method: "POST",
@@ -22,6 +34,61 @@ export async function invoke<T = unknown>(
   }
 
   return data.result;
+}
+
+async function invokeViaExtension<T = unknown>(
+  action: string,
+  params: Record<string, unknown>
+): Promise<T> {
+  const requestId =
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  return new Promise<T>((resolve, reject) => {
+    const timeout = window.setTimeout(() => {
+      cleanup();
+      reject(
+        new Error(
+          "AnkiConnect browser extension not detected. Install the bridge extension to connect from GitHub Pages."
+        )
+      );
+    }, EXTENSION_TIMEOUT_MS);
+
+    function cleanup() {
+      window.clearTimeout(timeout);
+      window.removeEventListener("message", handleMessage);
+    }
+
+    function handleMessage(event: MessageEvent) {
+      if (event.source !== window) return;
+      const message = event.data;
+      if (!message || message.type !== "ANKI_CONNECT_RESPONSE") return;
+      if (message.id !== requestId) return;
+
+      cleanup();
+
+      if (message.error) {
+        reject(new Error(message.error));
+        return;
+      }
+
+      resolve(message.result as T);
+    }
+
+    window.addEventListener("message", handleMessage);
+
+    window.postMessage(
+      {
+        type: "ANKI_CONNECT_REQUEST",
+        id: requestId,
+        action,
+        version: ANKI_CONNECT_VERSION,
+        params,
+      },
+      "*"
+    );
+  });
 }
 
 export async function getDeckNames(): Promise<string[]> {

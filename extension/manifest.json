@@ -1,0 +1,24 @@
+{
+  "name": "Anki Sentences Bridge",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "description": "Bridge GitHub Pages to local AnkiConnect.",
+  "permissions": [],
+  "host_permissions": [
+    "http://localhost:8765/",
+    "http://127.0.0.1:8765/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://franarnaudo.github.io/anki-sentences/*",
+        "http://localhost:5173/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

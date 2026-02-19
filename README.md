@@ -16,6 +16,16 @@ Create focused sentence practice from your Anki cards. Filter by deck, note type
 - Anki + AnkiConnect add-on (ID `2055492159`)
 - AnkiConnect CORS: add `http://localhost:5173` to `webCorsOriginList`
 
+## GitHub Pages + AnkiConnect (Chrome Extension) 🧩
+
+To connect from GitHub Pages (HTTPS) you need the small bridge extension in this repo. It forwards requests from the web app to local AnkiConnect.
+
+1. Open Chrome → `chrome://extensions`
+2. Enable **Developer mode**
+3. Click **Load unpacked** and select the `extension` folder in this repo
+4. Make sure Anki is running with AnkiConnect
+5. Open the site: `https://franarnaudo.github.io/anki-sentences/`
+
 ## Quick Start 🚀
 
 ```bash
