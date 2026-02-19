@@ -1,6 +1,7 @@
 # Anki Sentences 📚✨
 
-> **Choose Language / Elige idioma:** **English** | [Español](README_ES.md)
+## Choose your language for the ReadMe / Elige idioma para el Léeme
+ Current: **English** | [Español](README_ES.md)
 
 Create focused sentence practice from your Anki cards. Filter by deck, note type, card type, interval, and recent reviews, then practice one-at-a-time or in a challenge mode. Includes optional LLM sentence generation for extra context.
 
