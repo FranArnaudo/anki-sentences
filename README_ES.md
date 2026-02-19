@@ -1,7 +1,8 @@
 # Anki Sentences 📚✨
 
 ## Choose your language for the ReadMe / Elige idioma para el Léeme
- Actual: **Español** | [English](README.md)
+
+Actual: **Español** | [English](README.md)
 
 Crea práctica enfocada de oraciones desde tus tarjetas de Anki. Filtra por mazo, tipo de nota, tipo de tarjeta, intervalo y repasos recientes; luego practica una por una o en modo desafío. Incluye generación opcional de oraciones con LLM para más contexto.
 
@@ -19,22 +20,47 @@ Crea práctica enfocada de oraciones desde tus tarjetas de Anki. Filtra por mazo
 - Tener instalado Anki Desktop
 - Anki + complemento AnkiConnect (ID `2055492159`)
 - Anki → Tools → Add-ons → AnkiConnect → Config → Pega esto y luego cierra y vuelve a abrir Anki:
+
 ```json
 {
-    "apiKey": null,
-    "apiLogPath": null,
-    "ignoreOriginList": [],
-    "webBindAddress": "127.0.0.1",
-    "webBindPort": 8765,
-    "webCorsOriginList": [
-        "http://localhost",
-        "http://localhost:5173",
-        "https://franarnaudo.github.io"
-    ]
+  "apiKey": null,
+  "apiLogPath": null,
+  "ignoreOriginList": [],
+  "webBindAddress": "127.0.0.1",
+  "webBindPort": 8765,
+  "webCorsOriginList": [
+    "http://localhost",
+    "http://localhost:5173",
+    "https://franarnaudo.github.io"
+  ]
 }
 ```
+
 <img width="325" height="181" alt="image" src="https://github.com/user-attachments/assets/6a44f027-6b21-4f10-bf56-621997f7f8d8" />
 Tendrás que habilitar permisos para conectar con dispositivos locales (esto es necesario para conectar con tu Anki local).
+
+## Obtener una API Key de Gemini 🔑
+
+1. Abre Google AI Studio e inicia sesión:
+
+```
+https://ai.google.dev/aistudio
+```
+
+2. Abre la página de API Keys:
+
+```
+https://aistudio.google.com/app/apikey
+```
+
+3. Haz clic en **Create API key** (elige un proyecto si te lo pide).
+4. Copia la key y pégala en el campo de API key dentro de la app.
+
+Más info de Google:
+
+```
+https://ai.google.dev/gemini-api/docs/api-key
+```
 
 ## Página en vivo 🌐
 
