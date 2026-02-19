@@ -6,6 +6,32 @@ Actual: **Español** | [English](README.md)
 
 Crea práctica enfocada de oraciones desde tus tarjetas de Anki. Filtra por mazo, tipo de nota, tipo de tarjeta, intervalo y repasos recientes; luego practica una por una o en modo desafío. Incluye generación opcional de oraciones con LLM para más contexto.
 
+## IMPORTANTE: Extensión de Chrome requerida para GitHub Pages 🧩
+
+Si usas el sitio alojado (`https://franarnaudo.github.io/anki-sentences/`), DEBES instalar la extensión puente de este repo o NO se conectará a Anki.
+
+### Paso a paso (muy detallado)
+
+1. Abre este repo en GitHub y haz clic en **Code → Download ZIP**.
+2. Descomprime el archivo en tu computadora.
+3. Dentro de la carpeta descomprimida, busca la carpeta `extension`.
+4. Abre Chrome y ve a:
+
+```
+chrome://extensions
+```
+
+5. Activa **Developer mode** (arriba a la derecha).
+6. Haz clic en **Load unpacked**. (arriba a la izquierda)
+7. Selecciona la carpeta `extension` (la que contiene `manifest.json`).
+8. Confirma que la extensión esté habilitada.
+9. Mantén Anki abierto con AnkiConnect instalado.
+10. Abre el sitio:
+
+```
+https://franarnaudo.github.io/anki-sentences/
+```
+
 ## Funciones ✅
 
 - Se conecta a Anki mediante AnkiConnect

@@ -6,6 +6,32 @@ Current: **English** | [Español](README_ES.md)
 
 Create focused sentence practice from your Anki cards. Filter by deck, note type, card type, interval, and recent reviews, then practice one-at-a-time or in a challenge mode. Includes optional LLM sentence generation for extra context.
 
+## IMPORTANT: Chrome Extension Required for GitHub Pages 🧩
+
+If you are using the hosted site (`https://franarnaudo.github.io/anki-sentences/`), you MUST install the bridge extension from this repo or it will NOT connect to Anki.
+
+### Step‑by‑step (very explicit)
+
+1. Open this repo on GitHub and click **Code → Download ZIP**.
+2. Unzip the file on your computer.
+3. Inside the unzipped folder, find the `extension` folder.
+4. Open Chrome and go to:
+
+```
+chrome://extensions
+```
+
+5. Turn on **Developer mode** (top right).
+6. Click **Load unpacked**. (top left)
+7. Select the `extension` folder (the folder that contains `manifest.json`).
+8. Confirm the extension is enabled.
+9. Keep Anki open with AnkiConnect installed.
+10. Open the site:
+
+```
+https://franarnaudo.github.io/anki-sentences/
+```
+
 ## Features ✅
 
 - Connects to Anki via AnkiConnect
