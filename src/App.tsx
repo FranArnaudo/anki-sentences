@@ -34,6 +34,7 @@ function App() {
   const [mode, setMode] = useState<Mode>("single");
   const [hasKey, setHasKey] = useState(() => !!loadConfig()?.apiKey);
   const [fieldMappings, setFieldMappings] = useState<Record<string, FieldMapping>>(loadFieldMappings);
+  const [showReadmeBanner, setShowReadmeBanner] = useState(true);
 
   const { decks, error: decksError } = useDecks();
   const { models, error: modelsError } = useModelNames();
@@ -73,6 +74,28 @@ function App() {
           {lang === "en" ? "ES" : "EN"}
         </button>
       </header>
+      {showReadmeBanner && (
+        <div className="readme-banner" role="alert">
+          <div className="readme-banner-content">
+            <strong>Important:</strong> Read the README before you start.{" "}
+            <a
+              href="https://github.com/FranArnaudo/anki-sentences#readme"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github.com/FranArnaudo/anki-sentences
+            </a>
+          </div>
+          <button
+            className="readme-banner-close"
+            type="button"
+            aria-label="Dismiss"
+            onClick={() => setShowReadmeBanner(false)}
+          >
+            ×
+          </button>
+        </div>
+      )}
 
       {connectionError && (
         <div className="error-banner">

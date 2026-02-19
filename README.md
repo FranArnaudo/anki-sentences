@@ -36,14 +36,9 @@ Create focused sentence practice from your Anki cards. Filter by deck, note type
 <img width="325" height="181" alt="image" src="https://github.com/user-attachments/assets/6a44f027-6b21-4f10-bf56-621997f7f8d8" />
 You will have to enable permissions to connect to local devices (this is needed to connect to your anki locally)
 
-## Quick Start 🚀
+## Live Page 🌐
 
-```bash
-npm install
-npm run dev
-```
-
-Open `http://localhost:5173`.
+`https://franarnaudo.github.io/anki-sentences/`
 
 ## Usage 🧭
 

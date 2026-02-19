@@ -1,6 +1,7 @@
 # Anki Sentences 📚✨
 
-> **Choose Language / Elige idioma:** [English](README.md) | **Español**
+## Choose your language for the ReadMe / Elige idioma para el Léeme
+ Actual: **Español** | [English](README.md)
 
 Crea práctica enfocada de oraciones desde tus tarjetas de Anki. Filtra por mazo, tipo de nota, tipo de tarjeta, intervalo y repasos recientes; luego practica una por una o en modo desafío. Incluye generación opcional de oraciones con LLM para más contexto.
 
@@ -35,14 +36,9 @@ Crea práctica enfocada de oraciones desde tus tarjetas de Anki. Filtra por mazo
 <img width="325" height="181" alt="image" src="https://github.com/user-attachments/assets/6a44f027-6b21-4f10-bf56-621997f7f8d8" />
 Tendrás que habilitar permisos para conectar con dispositivos locales (esto es necesario para conectar con tu Anki local).
 
-## Inicio rápido 🚀
+## Página en vivo 🌐
 
-```bash
-npm install
-npm run dev
-```
-
-Abre `http://localhost:5173`.
+`https://franarnaudo.github.io/anki-sentences/`
 
 ## Uso 🧭
 
