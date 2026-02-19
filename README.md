@@ -1,5 +1,7 @@
 # Anki Sentences 📚✨
 
+> **Choose Language / Elige idioma:** **English** | [Español](README_ES.md)
+
 Create focused sentence practice from your Anki cards. Filter by deck, note type, card type, interval, and recent reviews, then practice one-at-a-time or in a challenge mode. Includes optional LLM sentence generation for extra context.
 
 ## Features ✅
@@ -13,18 +15,25 @@ Create focused sentence practice from your Anki cards. Filter by deck, note type
 
 ## Requirements 🧩
 
+- Anki Desktop installed
 - Anki + AnkiConnect add-on (ID `2055492159`)
-- AnkiConnect CORS: add `http://localhost:5173` to `webCorsOriginList`
-
-## GitHub Pages + AnkiConnect (Chrome Extension) 🧩
-
-To connect from GitHub Pages (HTTPS) you need the small bridge extension in this repo. It forwards requests from the web app to local AnkiConnect.
-
-1. Open Chrome → `chrome://extensions`
-2. Enable **Developer mode**
-3. Click **Load unpacked** and select the `extension` folder in this repo
-4. Make sure Anki is running with AnkiConnect
-5. Open the site: `https://franarnaudo.github.io/anki-sentences/`
+- Anki → Tools → Add-ons → AnkiConnect → Config → Paste this and then close and reopen Anki:
+```json
+{
+    "apiKey": null,
+    "apiLogPath": null,
+    "ignoreOriginList": [],
+    "webBindAddress": "127.0.0.1",
+    "webBindPort": 8765,
+    "webCorsOriginList": [
+        "http://localhost",
+        "http://localhost:5173",
+        "https://franarnaudo.github.io"
+    ]
+}
+```
+<img width="325" height="181" alt="image" src="https://github.com/user-attachments/assets/6a44f027-6b21-4f10-bf56-621997f7f8d8" />
+You will have to enable permissions to connect to local devices (this is needed to connect to your anki locally)
 
 ## Quick Start 🚀
 
